@@ -1,4 +1,4 @@
-let usuarios = [];
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 function registrarUsuario() {
 
