@@ -17,16 +17,23 @@ const inicioSesion = () => {
         if (Password == usuario.contraseña) {
 
             alert("Contraseña correcta");
+
+            localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
             console.log("Logeado correctamente");
             console.log("Rol:", usuario.rol);
 
-        } else {
+            window.location.href = "../panel/panel.html";
+
+        } 
+        else {
 
             alert("Contraseña incorrecta");
 
         }
 
-    } else {
+    } 
+    else {
 
         alert("Email incorrecto");
 
