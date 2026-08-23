@@ -5,7 +5,7 @@ let contenido = document.getElementById("contenido");
 
 bienvenido.textContent = "Bienvenido " + usuario.nombre;
 
-if (usuario.rol == "administrador") {
+if (usuario.rol === "administrador academico") {
 
     contenido.innerHTML =
         "<h2>Administrador</h2>" +
@@ -13,7 +13,7 @@ if (usuario.rol == "administrador") {
         "<p>Gestión de docentes</p>" +
         "<p>Reportes académicos</p>";
 
-} else if (usuario.rol == "docente") {
+} else if (usuario.rol === "docente") {
 
     contenido.innerHTML =
         "<h2>Docente</h2>" +
@@ -21,7 +21,7 @@ if (usuario.rol == "administrador") {
         "<p>Registro de notas</p>" +
         "<p>Lista de estudiantes</p>";
 
-} else if (usuario.rol == "estudiante") {
+} else if (usuario.rol === "estudiante") {
 
     contenido.innerHTML =
         "<h2>Estudiante</h2>" +
@@ -33,5 +33,5 @@ if (usuario.rol == "administrador") {
 
     contenido.innerHTML =
         "<h2>Rol no reconocido</h2>" +
-        "<p>No se encontró un rol válido</p>";
+        "<p>El rol del usuario es: " + usuario.rol + "</p>";
 }
