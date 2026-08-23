@@ -1,35 +1,34 @@
 const inicioSesion = () => {
 
-    let email = document.getElementById("email")
-    let password = document.getElementById("password")
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
 
-    let Email = email.value
-    let Password = password.value
+    let Email = email.value;
+    let Password = password.value;
 
-    let usuario = JSON.parse(localStorage.getItem("usuario"))
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    console.log(usuario)
+    let usuario = usuarios.find(usuario => usuario.correo == Email);
 
-    if (Email == usuario.correo) {
+    if (usuario) {
 
-        alert("Email escrito correctamente")
+        alert("Email escrito correctamente");
 
-        if (Password == usuario.password) {
+        if (Password == usuario.contraseña) {
 
-            alert("Contraseña correcta")
-            console.log("Logeado correctamente")
+            alert("Contraseña correcta");
+            console.log("Logeado correctamente");
+            console.log("Rol:", usuario.rol);
+
+        } else {
+
+            alert("Contraseña incorrecta");
 
         }
-        else {
 
-            alert("Contraseña incorrecta")
+    } else {
 
-        }
-
-    }
-    else {
-
-        alert("Email incorrecto")
+        alert("Email incorrecto");
 
     }
 }
